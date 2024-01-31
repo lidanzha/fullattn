@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "python",
+            "request": "launch",
+            "program": "eval.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+              },
+            "args":[
+                "--root",
+                "/mnt/disk1/lidanzha/data/argoverse/av1/",
+                "--ckpt_path",
+                "/mnt/disk1/lidanzha/work/argoverse/HiVT-patch/experiments/tubefull_ps20_bs32_r3_1/checkpoints/epoch=68-step=222041.ckpt",
+                "--gpus", 
+                "1",
+            ]
+        },
+        {
+        "name": "debug2",
+        "type": "python",
+        "request": "launch",
+        "program": "train.py",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "env": {
+            "CUDA_VISIBLE_DEVICES": "0"
+          },
+        "args":[
+            "--root",
+            "/mnt/disk1/lidanzha/data/argoverse/debug/",
+            "--embed_dim",
+            "128",
+            "--patch_size", 
+            "5",
+            "--gpus", 
+            "1",
+        ]
+    },
+    {
+        "name": "debug2",
+        "type": "python",
+        "request": "launch",
+        "program": "process_dataset.py",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+    }
+]
+}
